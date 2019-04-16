@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="LibreBlogging - Your IPFS blog companion">
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="/static/css/dashboard.css" />
+    <link rel="stylesheet" href="/static/css/app.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="flex-fill">
+
+        <!-- Header -->
+{% include 'header.html' %}
+
+        <!-- Content -->
+{% block content %}{% endblock %}
+      </div> <!-- close div flex-fill -->
+      <!-- Footer -->
+{% include 'footer.html' %}
+    </div> <!-- close div page -->
+
+    <!-- JavaScript -->
+    <script src="/static/js/require.min.js"></script>
+    <script>
+      requirejs.config({
+          baseUrl: '.'
+      });
+    </script>
+    <script src="/static/js/dashboard.js"></script>
+    <script src="/static/js/app.js"></script>
+    {% block extrajs %}{% endblock %}
+  </body>
+</html>
